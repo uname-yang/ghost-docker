@@ -1,8 +1,6 @@
 #!/bin/bash
 set -e
 
-exec su-exec node ghost config --no-prompt --url http://"$HOST_URL"
-
 # allow the container to be started with `--user`
 if [[ "$*" == node*current/index.js* ]] && [ "$(id -u)" = '0' ]; then
 	chown -R node "$GHOST_CONTENT"
